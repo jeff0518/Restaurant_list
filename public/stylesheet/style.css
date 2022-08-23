@@ -21,7 +21,7 @@ header {
 }
 
 .search-bar .search-bar-outer {
-	margin: 0 auto;
+	margin: 0 auto 50px;
 	max-width: 680px;
 	background-color: #fce2cf;
 	border-radius: 8px;
@@ -76,6 +76,13 @@ header {
 	text-align: center;
 	font-size: 3rem;
 	text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+h3 {
+	display: inline-block;
+	text-align: center;
+	width: 100%;
+	margin: 0 auto;
 }
 
 @media screen and (max-width: 992px) {

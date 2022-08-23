@@ -14,13 +14,17 @@ app.get('/', (req, res) => {
 	res.render('index', { restaurant: restaurantList.results })
 })
 
-// 搜索功能
+// 搜索功能 新增找不到資料頁面
 app.get('/search/', (req, res) => {
 	const keyword = req.query.keyword
 	const restaurant = restaurantList.results.filter(restaurant => {
 		return restaurant.name.toLowerCase().includes(keyword.toLowerCase())
 	})
-	res.render('index', { restaurant: restaurant, keyword: keyword })
+	if (restaurant.length > 0) {
+		res.render('index', { restaurant: restaurant, keyword: keyword })
+	} else {
+		res.render('error', { restaurant: restaurant, keyword: keyword })
+	}
 })
 
 // 動態尋找id
