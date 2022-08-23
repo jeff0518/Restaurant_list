@@ -11,15 +11,13 @@ app.set('view engine', 'handlebars')
 app.use(express.static('public'))
 
 app.get('/', (req, res) => {
-	// const restaurantOne = {
-	// 	id: 1,
-	// 	title: 'Sababa 沙巴巴中東美食',
-	// 	category: '中東料理'
-	// 	image: 'https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5635/01.jpg',
-	// }
-	res.render('index')
+	res.render('index', { restaurant: restaurantList.results })
 })
 
+app.get('/restaurants/:restaurant_id', (req, res) => {
+	const restaurant = restaurantList.results.find(restaurant => restaurant.id.toString() === req.params.restaurant_id)
+	res.render('show', { restaurant: restaurant })
+})
 
 app.listen(port, () => {
 	console.log(`Express is listening on localhost:${port}`)
