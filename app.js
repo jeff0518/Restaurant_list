@@ -18,13 +18,14 @@ app.get('/', (req, res) => {
 // 搜索功能 新增找不到資料的頁面
 app.get('/search/', (req, res) => {
 	const searchType = req.query.searchType
+	console.log(searchType)
 	const keyword = req.query.keyword.trim().toLowerCase()
 	const restaurant = restaurantList.results.filter(restaurant => {
-		if (searchType === 'name') {
+		if (searchType === '名稱') {
 			return restaurant.name.toLowerCase().includes(keyword)
-		} else if (searchType === 'category') {
+		} else if (searchType === '類別') {
 			return restaurant.category.toLowerCase().includes(keyword)
-		} else if (searchType === 'location') {
+		} else if (searchType === '地址') {
 			return restaurant.location.toLowerCase().includes(keyword)
 		}
 	})
