@@ -8,9 +8,9 @@
 					<div class="input-group">
 						<select class="form-select form-select-sm p-1" name="searchType" id="seach-tags"
 							aria-label="Default select example">
-							<option name="searchType" value="名稱">名稱</option>
-							<option name="searchType" value="類別">類別</option>
-							<option name="searchType" value="地址">地址</option>
+							<option name="searchType" value="name">name</option>
+							<option name="searchType" value="category">category</option>
+							<option name="searchType" value="location">location</option>
 						</select>
 						<input type="text" name="keyword" value="{{keyword}}" class="form-control" placeholder="輸入餐廳、分類"
 							aria-label="Restaurant Name..." aria-describedby="search-button">
@@ -22,5 +22,5 @@
 		</div>
 	</div>
 	<p></p>
-	<h3>我在 {{searchType}} 裡找不到與 {{keyword}} 有關的餐廳</h3>
+	<h3>I can't find restaurants related to {{keyword}} in {{searchType}}</h3>
 </div>
