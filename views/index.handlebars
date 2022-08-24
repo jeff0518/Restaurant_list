@@ -5,12 +5,19 @@
 			<form action="/search">
 				<h4 class="mb-2">尋找餐廳：</h4>
 				<div class="input-group">
-					<input type="text" name="keyword" value="{{keyword}}" class="form-control" placeholder="輸入餐廳、分類"
-						aria-label="Restaurant Name..." aria-describedby="search-button">
-					<div class="input-group-append">
-						<button class="btn btn-major" type="submit" id="search-button"><i class="fas fa-search"></i></button>
+					<div class="input-group">
+						<select class="form-select form-select-sm p-1" name="searchType" id="seach-tags"
+							aria-label="Default select example">
+							<option name="searchType" value="name">餐廳名稱</option>
+							<option name="searchType" value="category">餐廳類別</option>
+							<option name="searchType" value="location">餐廳地址</option>
+						</select>
+						<input type="text" name="keyword" value="{{keyword}}" class="form-control" placeholder="輸入餐廳、分類"
+							aria-label="Restaurant Name..." aria-describedby="search-button">
+						<div class="input-group-append">
+							<button class="btn btn-major" type="submit" id="search-button"><i class="fas fa-search"></i></button>
+						</div>
 					</div>
-				</div>
 			</form>
 		</div>
 	</div>
